@@ -108,12 +108,15 @@ export default {
     columns () {
       return [{
         title: '客户编号',
+        ellipsis: true,
         dataIndex: 'code'
       }, {
         title: '客户名称',
+        ellipsis: true,
         dataIndex: 'name'
       }, {
         title: '联系方式',
+        ellipsis: true,
         dataIndex: 'phone',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -125,6 +128,7 @@ export default {
       }, {
         title: '邮箱地址',
         dataIndex: 'mail',
+        ellipsis: true,
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -147,6 +151,7 @@ export default {
       }, {
         title: '注册时间',
         dataIndex: 'createDate',
+        ellipsis: true,
         customRender: (text, row, index) => {
           if (text !== null) {
             return text

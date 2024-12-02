@@ -130,9 +130,11 @@ export default {
     columns () {
       return [{
         title: '员工姓名',
+        ellipsis: true,
         dataIndex: 'name'
       }, {
         title: '员工编号',
+        ellipsis: true,
         dataIndex: 'code'
       }, {
         title: '性别',
@@ -174,6 +176,7 @@ export default {
         }
       }, {
         title: '商家编号',
+        ellipsis: true,
         dataIndex: 'merchantCode',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -184,6 +187,7 @@ export default {
         }
       }, {
         title: '所属商家',
+        ellipsis: true,
         dataIndex: 'merchantName',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -194,6 +198,7 @@ export default {
         }
       }, {
         title: '创建时间',
+        ellipsis: true,
         dataIndex: 'createDate',
         customRender: (text, row, index) => {
           if (text !== null) {

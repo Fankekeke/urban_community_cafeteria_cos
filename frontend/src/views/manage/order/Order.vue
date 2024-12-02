@@ -164,9 +164,11 @@ export default {
     columns () {
       return [{
         title: '订单编号',
+        ellipsis: true,
         dataIndex: 'code'
       }, {
         title: '下单用户',
+        ellipsis: true,
         dataIndex: 'userName',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -189,6 +191,7 @@ export default {
         }
       }, {
         title: '所属商家',
+        ellipsis: true,
         dataIndex: 'merchantName',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -211,6 +214,7 @@ export default {
         }
       }, {
         title: '订单价格（元）',
+        ellipsis: true,
         dataIndex: 'orderPrice',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -221,6 +225,7 @@ export default {
         }
       }, {
         title: '折后价格（元）',
+        ellipsis: true,
         dataIndex: 'afterOrderPrice',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -231,6 +236,7 @@ export default {
         }
       }, {
         title: '订单状态',
+        ellipsis: true,
         dataIndex: 'status',
         customRender: (text, row, index) => {
           switch (text) {
@@ -248,6 +254,7 @@ export default {
         }
       }, {
         title: '订单类型',
+        ellipsis: true,
         dataIndex: 'type',
         customRender: (text, row, index) => {
           switch (text) {
@@ -261,6 +268,7 @@ export default {
         }
       }, {
         title: '下单时间',
+        ellipsis: true,
         dataIndex: 'createDate',
         customRender: (text, row, index) => {
           if (text !== null) {

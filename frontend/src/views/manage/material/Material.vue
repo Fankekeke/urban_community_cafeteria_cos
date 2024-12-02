@@ -109,9 +109,11 @@ export default {
     columns () {
       return [{
         title: '物品编号',
+        ellipsis: true,
         dataIndex: 'code'
       }, {
         title: '物品名称',
+        ellipsis: true,
         dataIndex: 'name'
       }, {
         title: '物品图片',
@@ -127,6 +129,7 @@ export default {
         }
       }, {
         title: '物品描述',
+        ellipsis: true,
         dataIndex: 'content',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -137,6 +140,7 @@ export default {
         }
       }, {
         title: '所需积分',
+        ellipsis: true,
         dataIndex: 'integral',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -147,6 +151,7 @@ export default {
         }
       }, {
         title: '销量',
+        ellipsis: true,
         dataIndex: 'saleNum',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -157,6 +162,7 @@ export default {
         }
       }, {
         title: '创建时间',
+        ellipsis: true,
         dataIndex: 'createDate',
         customRender: (text, row, index) => {
           if (text !== null) {

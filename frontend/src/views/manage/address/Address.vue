@@ -143,6 +143,7 @@ export default {
       return [{
         title: '所属用户',
         dataIndex: 'name',
+        ellipsis: true,
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -164,9 +165,11 @@ export default {
         }
       }, {
         title: '地址编号',
+        ellipsis: true,
         dataIndex: 'code'
       }, {
         title: '省份',
+        ellipsis: true,
         dataIndex: 'province'
       }, {
         title: '市',
@@ -177,6 +180,7 @@ export default {
       }, {
         title: '详细地址',
         dataIndex: 'address',
+        ellipsis: true,
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -187,6 +191,7 @@ export default {
       }, {
         title: '联系人',
         dataIndex: 'contactPerson',
+        ellipsis: true,
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -197,6 +202,7 @@ export default {
       }, {
         title: '联系方式',
         dataIndex: 'contactMethod',
+        ellipsis: true,
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -207,6 +213,7 @@ export default {
       }, {
         title: '创建时间',
         dataIndex: 'createDate',
+        ellipsis: true,
         customRender: (text, row, index) => {
           if (text !== null) {
             return text

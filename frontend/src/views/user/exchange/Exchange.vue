@@ -112,10 +112,12 @@ export default {
     columns () {
       return [{
         title: '用户编号',
+        ellipsis: true,
         dataIndex: 'code'
       }, {
         title: '兑换用户',
         dataIndex: 'userName',
+        ellipsis: true,
         customRender: (text, row, index) => {
           if (text !== null) {
             return text
@@ -137,6 +139,7 @@ export default {
         }
       }, {
         title: '邮箱地址',
+        ellipsis: true,
         dataIndex: 'mail',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -147,6 +150,7 @@ export default {
         }
       }, {
         title: '收货地址',
+        ellipsis: true,
         dataIndex: 'address',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -167,6 +171,7 @@ export default {
         }
       }, {
         title: '兑换物品',
+        ellipsis: true,
         dataIndex: 'materialName',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -189,6 +194,7 @@ export default {
         }
       }, {
         title: '兑换记录时间',
+        ellipsis: true,
         dataIndex: 'createDate',
         customRender: (text, row, index) => {
           if (text !== null) {

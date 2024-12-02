@@ -104,9 +104,11 @@ export default {
     columns () {
       return [{
         title: '会员编号',
+        ellipsis: true,
         dataIndex: 'userCode'
       }, {
         title: '会员名称',
+        ellipsis: true,
         dataIndex: 'userName',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -117,6 +119,7 @@ export default {
         }
       }, {
         title: '用户头像',
+        ellipsis: true,
         dataIndex: 'userImages',
         customRender: (text, record, index) => {
           if (!record.userImages) return <a-avatar shape="square" icon="user" />
@@ -129,6 +132,7 @@ export default {
         }
       }, {
         title: '商家名称',
+        ellipsis: true,
         dataIndex: 'merchantName',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -139,6 +143,7 @@ export default {
         }
       }, {
         title: '商家地址',
+        ellipsis: true,
         dataIndex: 'address',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -149,6 +154,7 @@ export default {
         }
       }, {
         title: '负责人',
+        ellipsis: true,
         dataIndex: 'principal',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -159,6 +165,7 @@ export default {
         }
       }, {
         title: '联系方式',
+        ellipsis: true,
         dataIndex: 'phone',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -191,6 +198,7 @@ export default {
         }
       }, {
         title: '上次消费时间',
+        ellipsis: true,
         dataIndex: 'lastDate',
         customRender: (text, row, index) => {
           if (text !== null) {

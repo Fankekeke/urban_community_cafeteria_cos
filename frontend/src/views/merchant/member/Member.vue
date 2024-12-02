@@ -119,9 +119,11 @@ export default {
     columns () {
       return [{
         title: '商家编号',
+        ellipsis: true,
         dataIndex: 'code'
       }, {
         title: '商家名称',
+        ellipsis: true,
         dataIndex: 'name',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -144,6 +146,7 @@ export default {
         }
       }, {
         title: '联系方式',
+        ellipsis: true,
         dataIndex: 'phone',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -154,6 +157,7 @@ export default {
         }
       }, {
         title: '详细地址',
+        ellipsis: true,
         dataIndex: 'address',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -175,6 +179,7 @@ export default {
       }, {
         title: '负责人',
         dataIndex: 'principal',
+        ellipsis: true,
         customRender: (text, row, index) => {
           if (text !== null) {
             return text

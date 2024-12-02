@@ -131,9 +131,11 @@ export default {
     columns () {
       return [{
         title: '规则编号',
+        ellipsis: true,
         dataIndex: 'code',
       }, {
         title: '规则内容',
+        ellipsis: true,
         dataIndex: 'remark'
       }, {
         title: '价格',
@@ -147,6 +149,7 @@ export default {
         }
       }, {
         title: '创建时间',
+        ellipsis: true,
         dataIndex: 'createDate',
         customRender: (text, row, index) => {
           if (text !== null) {

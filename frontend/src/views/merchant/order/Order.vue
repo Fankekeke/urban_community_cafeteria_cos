@@ -164,9 +164,11 @@ export default {
     columns () {
       return [{
         title: '订单编号',
+        ellipsis: true,
         dataIndex: 'code'
       }, {
         title: '下单用户',
+        ellipsis: true,
         dataIndex: 'userName',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -189,6 +191,7 @@ export default {
         }
       }, {
         title: '所属商家',
+        ellipsis: true,
         dataIndex: 'merchantName',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -261,6 +264,7 @@ export default {
         }
       }, {
         title: '下单时间',
+        ellipsis: true,
         dataIndex: 'createDate',
         customRender: (text, row, index) => {
           if (text !== null) {

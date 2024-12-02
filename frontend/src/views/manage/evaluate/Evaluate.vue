@@ -122,6 +122,7 @@ export default {
     columns () {
       return [{
         title: '评价用户',
+        ellipsis: true,
         dataIndex: 'userName',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -144,6 +145,7 @@ export default {
         }
       }, {
         title: '订单编号',
+        ellipsis: true,
         dataIndex: 'orderCode',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -174,6 +176,7 @@ export default {
         }
       }, {
         title: '评价内容',
+        ellipsis: true,
         dataIndex: 'content',
         scopedSlots: {customRender: 'evaluateShow'}
       }, {
@@ -190,6 +193,7 @@ export default {
         }
       }, {
         title: '所属商家',
+        ellipsis: true,
         dataIndex: 'merchantName',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -210,6 +214,7 @@ export default {
         }
       }, {
         title: '评价时间',
+        ellipsis: true,
         dataIndex: 'createDate',
         customRender: (text, row, index) => {
           if (text !== null) {

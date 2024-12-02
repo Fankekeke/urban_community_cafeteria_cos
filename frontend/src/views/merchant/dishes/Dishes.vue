@@ -128,9 +128,11 @@ export default {
     columns () {
       return [{
         title: '菜品编号',
+        ellipsis: true,
         dataIndex: 'code'
       }, {
         title: '菜品名称',
+        ellipsis: true,
         dataIndex: 'name'
       }, {
         title: '菜品图片',
@@ -146,6 +148,7 @@ export default {
         }
       }, {
         title: '商家名称',
+        ellipsis: true,
         dataIndex: 'merchantName',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -168,6 +171,7 @@ export default {
         }
       }, {
         title: '原料',
+        ellipsis: true,
         dataIndex: 'rawMaterial',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -178,6 +182,7 @@ export default {
         }
       }, {
         title: '份量',
+        ellipsis: true,
         dataIndex: 'portion',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -188,6 +193,7 @@ export default {
         }
       }, {
         title: '口味',
+        ellipsis: true,
         dataIndex: 'taste',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -198,6 +204,7 @@ export default {
         }
       }, {
         title: '价格',
+        ellipsis: true,
         dataIndex: 'unitPrice',
         customRender: (text, row, index) => {
           if (text !== null) {
@@ -221,6 +228,7 @@ export default {
         }
       }, {
         title: '销量',
+        ellipsis: true,
         dataIndex: 'saleNum',
         customRender: (text, row, index) => {
           if (text !== null) {
