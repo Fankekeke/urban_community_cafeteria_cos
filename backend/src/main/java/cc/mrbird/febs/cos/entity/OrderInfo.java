@@ -131,4 +131,31 @@ public class OrderInfo implements Serializable {
 
     @TableField(exist = false)
     private String userName;
+
+    /**
+     * 经度
+     */
+    @TableField(exist = false)
+    private BigDecimal startLongitude;
+
+    /**
+     * 纬度
+     */
+    @TableField(exist = false)
+    private BigDecimal startLatitude;
+
+    /**
+     * 经度
+     */
+    @TableField(exist = false)
+    private BigDecimal endLongitude;
+
+    /**
+     * 纬度
+     */
+    @TableField(exist = false)
+    private BigDecimal endLatitude;
+
+    @TableField(exist = false)
+    private String address;
 }

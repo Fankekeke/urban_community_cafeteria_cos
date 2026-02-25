@@ -413,6 +413,86 @@ public class OrderInfoServiceImpl extends ServiceImpl<OrderInfoMapper, OrderInfo
     }
 
     /**
+     * 查询可配送订单
+     *
+     * @param userId 用户ID
+     * @return 订单信息
+     */
+    @Override
+    public LinkedHashMap<String, Object> queryDeliveryOrder(Integer userId) {
+        // 获取商家信息
+        MerchantInfo merchantInfo = merchantInfoService.getOne(Wrappers.<MerchantInfo>lambdaQuery().eq(MerchantInfo::getUserId, userId));
+
+        // 获取当前正在配送中的订单
+        List<OrderInfo> orderInfoList = this.list(Wrappers.<OrderInfo>lambdaQuery()
+                .eq(OrderInfo::getMerchantId, merchantInfo.getId())
+                .eq(OrderInfo::getStatus, "2"));
+
+        if (CollectionUtil.isEmpty(orderInfoList)) {
+            return null;
+        }
+
+        // 获取用户收货地址
+        List<Integer> addressIds = orderInfoList.stream().map(OrderInfo::getAddressId).collect(Collectors.toList());
+        List<AddressInfo> addressInfoList = new ArrayList<>(addressInfoService.listByIds(addressIds));
+        Map<Integer, AddressInfo> addressMap = addressInfoList.stream().collect(Collectors.toMap(AddressInfo::getId, v -> v));
+
+        // 计算每个订单的距离并排序
+        List<OrderDistance> orderDistances = new ArrayList<>();
+        for (OrderInfo orderInfo : orderInfoList) {
+            AddressInfo addressInfo = addressMap.get(orderInfo.getAddressId());
+            if (addressInfo != null) {
+                double distance = LocationUtils.getDistance(
+                        merchantInfo.getLongitude().doubleValue(),
+                        merchantInfo.getLatitude().doubleValue(),
+                        addressInfo.getLongitude().doubleValue(),
+                        addressInfo.getLatitude().doubleValue()
+                );
+                orderInfo.setStartLatitude(addressInfo.getLatitude());
+                orderInfo.setStartLongitude(addressInfo.getLongitude());
+                orderInfo.setAddress(addressInfo.getAddress());
+
+                orderInfo.setEndLatitude(merchantInfo.getLatitude());
+                orderInfo.setEndLongitude(merchantInfo.getLongitude());
+
+                orderDistances.add(new OrderDistance(orderInfo, distance));
+            }
+        }
+
+        // 按照距离升序排序
+        orderDistances.sort(Comparator.comparingDouble(OrderDistance::getDistance));
+
+        // 构造返回结果
+        LinkedHashMap<String, Object> result = new LinkedHashMap<>();
+        result.put("orders", orderDistances.stream().map(OrderDistance::getOrderInfo).collect(Collectors.toList()));
+        result.put("distances", orderDistances.stream().collect(Collectors.toMap(
+                orderDistance -> orderDistance.getOrderInfo().getId(),
+                OrderDistance::getDistance
+        )));
+
+        return result;
+    }
+
+    // 辅助类：存储订单及其对应的距离
+    static class OrderDistance {
+        private final OrderInfo orderInfo;
+        private final double distance;
+
+        public OrderDistance(OrderInfo orderInfo, double distance) {
+            this.orderInfo = orderInfo;
+            this.distance = distance;
+        }
+
+        public OrderInfo getOrderInfo() {
+            return orderInfo;
+        }
+
+        public double getDistance() {
+            return distance;
+        }
+    }
+
+    /**
      * 获取订单评价详情
      *
      * @param id 主键

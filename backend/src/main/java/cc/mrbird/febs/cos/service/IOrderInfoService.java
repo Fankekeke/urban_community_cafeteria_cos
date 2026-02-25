@@ -82,6 +82,14 @@ public interface IOrderInfoService extends IService<OrderInfo> {
     List<MerchantInfo> selectMerchantList(String key);
 
     /**
+     * 查询可配送订单
+     *
+     * @param userId 用户ID
+     * @return 订单信息
+     */
+    LinkedHashMap<String, Object> queryDeliveryOrder(Integer userId);
+
+    /**
      * 获取订单评价详情
      *
      * @param id 主键

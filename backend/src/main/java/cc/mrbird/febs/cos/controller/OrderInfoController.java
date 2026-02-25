@@ -59,6 +59,17 @@ public class OrderInfoController {
     }
 
     /**
+     * 查询可配送订单
+     *
+     * @param userId 用户ID
+     * @return 订单信息
+     */
+    @GetMapping("/queryDeliveryOrder")
+    public R queryDeliveryOrder(Integer userId) {
+        return R.ok(orderInfoService.queryDeliveryOrder(userId));
+    }
+
+    /**
      * 根据用户ID获取历史订单
      *
      * @param userId 用户ID
