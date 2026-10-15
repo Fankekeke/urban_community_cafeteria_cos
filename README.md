@@ -1,17 +1,17 @@
-### 基于SpringBoot + Vue的城市社区食堂管理系统.
+![](https://img.shields.io/badge/License-MIT-blue.svg)
 
-社区食堂运营系统、智慧社区餐饮平台、社区老年助餐系统
+![](https://img.shields.io/badge/Version-1.0.0-brightgreen.svg)
 
-#### 管理员功能模块介绍：
-> 用户收货地址：查看和管理所有用户的配送地址信息。公告管理：发布社区食堂相关通知、活动或政策公告。餐品管理：审核、上下架各商家提供的菜品及详情信息。餐品类型：维护菜品类别，如主食、汤品、儿童餐等。订单评价：查看并监管用户对餐品和服务的评价内容。积分兑换：配置可兑换商品或优惠，并审核兑换记录。物品积分：设定不同商品或行为对应的积分奖励规则。会员积分：管理用户积分账户，支持增减与查询操作。商家管理：审核入驻食堂商家资质，管理其营业状态。商家会员：查看商家关联的会员体系及权益设置。订单管理：监控全平台订餐订单状态与履约情况。员工管理：管理平台运营及审核人员的账号与权限。用户管理：维护社区用户资料，处理异常或违规账号。帖子审核：审核用户在社区论坛发布的帖子内容。数据统计：分析订单量、热门餐品、用户活跃等运营数据。
+![](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
-#### 商家功能模块介绍：
-> 数据统计：查看本店订单量、销售额、用户评价等经营数据。餐品管理：添加、编辑或下架本店提供的餐品及价格信息。订单评价：查看顾客对本店餐品的评分与文字反馈。订单管理：处理用户下单、备餐、配送及退款等全流程。员工管理：管理本店厨房、配送等岗位员工账号信息。商家会员：设置会员等级、折扣或专属福利策略。商家信息管理：维护店铺名称、简介、营业时间等基本信息。
+# 基于 SpringBoot + Vue 的社区食堂管理系统 (Community Canteen Management System)
 
-#### 用户功能模块介绍：
-> 用户注册：通过手机号或账号完成平台注册流程。个人信息修改：更新昵称、联系方式、头像等个人资料。收货地址：添加、编辑或选择送餐到家的配送地址。订单下单：浏览餐品、加入购物车并提交订餐请求。订单评价：对已完成的订单进行打分和文字点评。商品收藏：收藏喜爱的餐品，便于下次快速下单。帖子发布与评论：在社区论坛分享用餐体验或互动交流。论坛发帖：创建新话题，参与社区饮食健康等讨论。支付为支付宝沙盒支付：使用支付宝沙箱环境完成模拟支付测试。
+多食堂入驻 · 餐品订购 · 支付宝支付 · 会员积分 · 论坛交流 · 商家管理 · 数据统计
+
+本项目是一套面向城市社区食堂场景的多食堂管理平台，采用前后端分离架构，覆盖系统管理员、商家（食堂运营方）、用户（社区居民）三类角色。系统围绕"多食堂入驻管理、餐品分类展示、在线下单支付、会员积分兑换、社区论坛交流、订单评价反馈"等核心业务设计，支持用户浏览食堂餐品、加入购物车、支付宝在线支付、参与论坛互动，商家管理本店餐品与订单、维护会员体系，系统管理员统筹平台商家审核、餐品分类、订单监管与内容审核，适用于社区助老食堂、街道便民食堂、多社区食堂连锁运营等场景。
 
 #### 安装环境
+️**注意**：请确保您的开发环境已安装以下依赖。
 
 JAVA 环境 
 
@@ -19,33 +19,174 @@ Node.js环境 [https://nodejs.org/en/] 选择14.17
 
 Yarn 打开cmd， 输入npm install -g yarn !!!必须安装完毕nodejs
 
-Mysql 数据库 [https://blog.csdn.net/qq_40303031/article/details/88935262] 一定要把账户和密码记住
+Mysql 数据库 一定要把账户和密码记住
 
 redis
 
-Idea 编译器 [https://blog.csdn.net/weixin_44505194/article/details/104452880]
+Idea 编译器
 
-WebStorm OR VScode 编译器 [https://www.jianshu.com/p/d63b5bae9dff]
+WebStorm OR VScode 编译器
 
 #### 采用技术及功能
 
 后端：SpringBoot、MybatisPlus、MySQL、Redis、
 前端：Vue、Apex、Antd、Axios
 
-平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件)
+平台前端：vue(框架) + vuex(全局缓存) + rue-router(路由) + axios(请求插件) + apex(图表)  + antd-ui(ui组件) + 百度地图 API
 
 平台后台：springboot(框架) + redis(缓存中间件) + shiro(权限中间件) + mybatisplus(orm) + restful风格接口 + mysql(数据库)
 
 开发环境：windows10 or windows7 ， vscode or webstorm ， idea + lambok
 
-##### 管理员： 
-用户收货地址，公告管理，餐品管理，餐品类型，订单评价，积分兑换，物品积分，会员积分，商家管理，商家会员，订单管理，员工管理，用户管理，帖子审核，数据统计
+---
 
-##### 商家： 
-数据统计，餐品管理，订单评价，订单管理，员工管理，商家会员，商家信息管理
+## 核心特性
 
-##### 用户：
-用户注册，个人信息修改，收货地址，订单下单，订单评价，商品收藏，帖子发布与评论，论坛发帖，支付为支付宝沙盒支付
+- **多食堂入驻模式**：支持多个社区食堂/商家入驻平台，各商家独立管理餐品与订单，平台统一审核与监管。
+- **餐品分类管理**：按餐品类型（主食、热菜、凉菜、汤羹、饮品、套餐等）构建多级分类体系，方便用户快速筛选。
+- **在线下单与支付宝支付**：用户浏览餐品、加入购物车后提交订单，支持支付宝在线支付，订单状态实时跟踪。
+- **会员积分体系**：商家可为用户设置会员等级与积分规则，用户消费获得积分，积分可兑换实物商品或抵扣餐费。
+- **订单评价反馈**：用户可对已完成订单进行评分与文字评价，商家可查看评价并改进服务。
+- **社区论坛交流**：提供社区论坛功能，用户可发帖分享就餐体验、交流饮食心得，帖子经审核后展示。
+- **收货地址管理**：用户可维护多个收货地址，支持堂食自提与送餐上门两种模式。
+- **商家数据统计**：商家可查看本店订单量、销售额、热销餐品排行与用户评价统计，辅助经营决策。
+- **平台数据统计**：系统管理员可查看全平台订单统计、各商家销售排行、用户活跃度等核心指标。
+- **公告信息发布**：系统管理员发布平台公告、食堂优惠活动、新餐品上架等信息，用户可查看。
+---
+
+## 适用场景
+
+- 社区助老食堂运营
+- 街道便民食堂管理
+- 多社区食堂连锁运营
+- 社区长者饭堂数字化管理
+- 社区食堂会员积分营销
+- 社区饮食文化交流平台
+- 线上预订+线下自提/配送的食堂模式
+---
+
+## 功能模块概览
+
+### 系统管理员端
+
+系统管理员端负责平台整体运营、商家审核、餐品分类管理、订单监管与内容审核：
+
+**平台基础管理**
+
+- **用户管理**：管理注册用户账号、实名认证状态、账户状态与违规处理。
+- **商家管理**：查看所有入驻商家列表，管理商家基本信息、营业状态与违规处罚。
+- **商家会员**：管理商家会员体系规则，包括会员等级、积分获取规则、积分兑换比例等全局配置。
+- **公告管理**：发布平台公告、食堂优惠活动通知、系统维护信息与政策更新。
+
+**餐品与分类管理**
+
+- **餐品管理**：管理全平台餐品列表，支持违规餐品下架、餐品审核与分类调整。
+- **餐品类型**：管理餐品多级分类体系（如主食→米饭/面食，热菜→荤菜/素菜），支持分类排序与图标配置。
+
+**订单与评价管理**
+
+- **订单管理**：查看全平台所有订单，包括订单号、商家、用户、餐品明细、金额、支付方式与订单状态。
+- **订单评价**：查看全平台用户对订单的评分与文字评价，处理恶意差评与评价申诉。
+
+**积分商城管理**
+
+- **物品积分**：管理积分兑换商品，包括商品名称、图片、所需积分、库存与上下架状态。
+- **积分兑换**：审核用户积分兑换申请，处理兑换订单与发货记录。
+- **会员积分**：查看全平台用户积分账户，管理积分增减记录与积分流水。
+
+**论坛与内容管理**
+
+- **帖子审核**：审核社区论坛帖子，支持帖子置顶、加精、删除与违规内容处理。
+
+**员工与地址管理**
+
+- **员工管理**：管理平台系统员工账号、角色分配与权限配置。
+- **用户收货地址**：查看用户维护的收货地址列表，处理地址异常与配送问题。
+
+**数据统计**
+
+- **数据统计**：按日/周/月统计平台总订单量、总销售额、各商家销售排行、用户活跃度与积分兑换量等核心指标。
+
+### 商家端
+
+商家端面向入驻的社区食堂运营方，负责本店餐品、订单、会员与员工管理：
+
+**商家信息管理**
+
+- **商家信息管理**：维护商家名称、Logo、简介、联系方式、经营地址、营业时间与资质文件。
+
+**餐品管理**
+
+- **餐品管理**：管理本店餐品，包括餐品上架/下架、编辑餐品名称、描述、价格、库存、规格与图片。
+
+**订单管理**
+
+- **订单管理**：查看本店订单列表，处理待接单、待出餐、待配送/待自提订单，确认订单完成与退款申请。
+- **订单评价**：查看用户对本店订单的评分与文字评价，回复用户评价与处理差评。
+
+**会员与积分管理**
+
+- **商家会员**：管理本店会员体系，设置会员等级、消费积分规则、会员专属优惠与积分兑换商品。
+
+**员工管理**
+
+- **员工管理**：管理本店员工账号，包括员工姓名、岗位（厨师、服务员、配送员）、权限分配与工作状态。
+
+**数据统计**
+
+- **数据统计**：查看本店订单量、销售额、热销餐品排行、会员增长趋势与用户评价统计。
+
+### 用户端
+
+用户端面向社区居民，通过微信小程序或 H5 提供餐品浏览、下单支付、论坛交流与评价功能：
+
+**账户与地址管理**
+
+- **用户注册**：支持手机号注册登录，密码加密存储，支持微信一键授权登录。
+- **个人信息修改**：维护姓名、年龄、联系方式、饮食偏好与过敏原信息。
+- **收货地址**：添加、编辑、删除收货地址，设置默认收货地址，支持堂食自提与送餐上门。
+
+**餐品浏览与购买**
+
+- **餐品浏览**：按分类浏览各食堂餐品，查看餐品详情、价格、库存与用户评价。
+- **商品收藏**：收藏心仪餐品或商家，方便下次快速下单。
+- **订单下单**：将餐品加入购物车或直接下单，选择收货地址与配送方式，提交订单。
+- **支付宝在线支付**：支持支付宝在线支付，支付成功后订单状态自动更新。
+
+**评价与论坛**
+
+- **订单评价**：对已完成订单进行评分与文字评价，分享就餐体验。
+- **论坛发帖**：在社区论坛发布帖子，分享就餐心得、饮食建议或食堂反馈。
+- **帖子发布与评论**：发布帖子并回复他人帖子，参与社区饮食话题讨论。
+
+**公告查看**
+
+- **查看公告**：查看平台发布的公告信息、食堂优惠活动与新餐品上架通知。
+
+---
+
+## 项目结构
+
+```text
+pharmacy-dispensing-system/
+├── backend/            # 后端 API 服务
+│   ├── src/
+│   │   ├── controllers/  # 控制器
+│   │   ├── models/       # 数据模型
+│   │   ├── routes/       # 路由
+│   │   └── services/     # 业务逻辑
+│   └── package.json
+├── frontend/           # 前端 Web 应用
+│   ├── src/
+│   │   ├── views/      # 页面视图
+│   │   ├── components/ # 公共组件
+│   │   └── store/      # 状态管理
+│   └── package.json
+├── docs/               # 项目文档与 API 接口说明
+├── LICENSE
+└── README.md
+```
+---
 
 
 #### 前台启动方式
@@ -55,33 +196,27 @@ WebStorm OR VScode 编译器 [https://www.jianshu.com/p/d63b5bae9dff]
 #### 默认后台账户密码
 [管理员]
 admin
-1234qwer
+123456
 
-[商家管理员]
-shangjia
-1234qwer
-
-[用户]
+[员工]
 fank
-1234qwer
+123456
 
 #### 项目截图
-
 |  |  |
 |---------------------|---------------------|
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733313905399.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314587984.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314887262.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314563947.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314869376.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314542997.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314846565.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314510235.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314831127.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314226601.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314797431.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314146503.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314769951.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314127351.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314734505.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314076924.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314712174.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314021800.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314671518.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314007255.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314630784.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733313986256.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733314604374.png) | ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/1733313964550.png) |
-| ![](https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/work/936e9baf53eb9a217af4f89c616dc19.png) |
+| ![](./assets/image%20(1).png) | ![](./assets/image%20(2).png) |
+| ![](./assets/image%20(3).png) | ![](./assets/image%20(4).png) |
+| ![](./assets/image%20(5).png) | ![](./assets/image%20(6).png) |
+| ![](./assets/image%20(7).png) | ![](./assets/image%20(8).png) |
+| ![](./assets/image%20(9).png) | ![](./assets/image%20(10).png) |
+| ![](./assets/image%20(11).png) | ![](./assets/image%20(12).png) |
+| ![](./assets/image%20(13).png) | ![](./assets/image%20(14).png) |
+| ![](./assets/image%20(15).png) | ![](./assets/image%20(16).png) |
+| ![](./assets/image%20(17).png) | ![](./assets/image%20(18).png) |
+| ![](./assets/image%20(19).png) | ![](./assets/image%20(20).png) | 
+| ![](./assets/image%20(21).png) | ![](./assets/image%20(22).png) | 
+| ![](./assets/image%20(23).png) | ![](./assets/image%20(24).png) | 
 
 
 #### 演示视频
@@ -100,7 +235,10 @@ WeChat: `Storm_Berserker`
 
 > 项目部署调试不好包退！功能逻辑没讲明白包退！
 
+<div align=center><img align="center" src="./assets/product_word.png" alt="fankekeke" /></div>
+
 #### 其它资源
+[2026年-答辩顺利通过-客户评价🀄](https://berserker287.github.io/2026/06/29/2026%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/)
 
 [2025年-答辩顺利通过-客户评价🍜](https://berserker287.github.io/2025/06/18/2025%E5%B9%B4%E7%AD%94%E8%BE%A9%E9%A1%BA%E5%88%A9%E9%80%9A%E8%BF%87/)
 
@@ -124,4 +262,8 @@ WeChat: `Storm_Berserker`
 
 More info: [悲伤的橘子树](https://berserker287.github.io/)
 
-<p><img align="center" src="https://fank-bucket-oss.oss-cn-beijing.aliyuncs.com/img/%E5%90%88%E4%BD%9C%E7%89%A9%E6%96%99%E6%A0%B7%E5%BC%8F%20(3).png" alt="fankekeke" /></p>
+<div align="center"><img align="center" src="./assets/chat_qr_code.png" alt="fankekeke" width=250 /></div>
+
+<p><img align="center" src="./assets/wechat_group.png" alt="fankekeke" /></p>
+
+**感谢查看**
